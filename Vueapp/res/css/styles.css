@@ -1,0 +1,295 @@
+/*  Veralite CSS (Open-Source Light-weight CSS)  ============================================================================= */
+
+body {
+  background: #fff;
+  color: #222;
+  cursor: auto;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+button, .button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 0;
+	font-size: 1rem;  
+	margin-left: .5rem;
+	font-weight: bold;
+	float: right;
+	padding: .3rem .5rem .3rem .5rem;
+	text-align: center;
+	display: inline-block;
+	background-color: #ff3602;
+	color: #ffffff; 
+}
+
+.header {
+  font-size: 1rem;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  height: 3rem;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.header p {
+  font-weight: bold;
+	color: #ff3602;
+  padding-left: 1rem;
+}
+
+
+.header::after {
+  clear: both;
+  content: "";
+  display: table; 
+}
+
+@media only screen and (min-width: 768px) {
+.header {
+	height: 4rem; 
+	width: 40%;
+	position: fixed;
+	top: 11%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin-left: auto;
+	margin-right: auto; 
+	padding-left: 2rem;
+	padding-right: 2rem;
+  box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.header p {
+  font-size: 1.2rem;
+	color: #ff3602;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.5rem;
+  }
+}
+
+.activity-holder {
+    display: block; 
+    position: fixed; 
+    z-index: 0; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: #544c63;
+}
+
+/* Modal Content */
+.list-container {
+	position: absolute;
+	overflow: auto;
+  background-color: #fefefe;
+	width: 100%;
+	height: 100%;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+	padding-top: 3rem;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+.list-item {
+  color: #222222;
+  left: 0;
+	margin-top: 2rem;
+	margin-bottom:  4rem;
+  padding-left: 1.3rem; 
+	padding-right: 1rem;
+  border-bottom: solid;
+  border-bottom-color: #f2f2f2;
+  border-width: 1px;  
+}
+
+.list-item img { 
+  width: 15%;
+  height: auto; 
+	border-radius: 50px;
+	margin-right: 1rem;
+}
+
+.list-item h1 { 	
+  font-size: 1rem;
+	padding: 1rem, 0, 0rem, 0rem; 
+}
+
+.user-detail {
+  display: block;
+  position: relative;
+  background-color: #fefefe;
+	width: 100%;
+	height: 100%;
+  margin: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+	padding: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}  
+
+.user-detail img {
+		width: 18%;
+		height: auto;
+		border-radius: 50px;
+}
+
+
+.user-detail h1 {
+	font-size: 1rem;
+	padding-right: 4rem;
+}
+
+.user-detail p {
+	white-space: normal;	
+	font-size: 1rem;
+	font-weight: bold;
+	padding-top: 2rem;	
+}
+
+
+.u-d-img-holder img{
+	margin-left: 2rem;
+	margin-top: 7rem;
+}
+
+@media only screen and (min-width: 768px) {
+.list-container {
+	  overflow: auto;
+		width: 40%;
+		height: 70%;
+    margin: auto;
+    top: 20%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 2rem; 
+  }
+}
+
+@media only screen and (min-width: 768px) {
+.user-detail {
+		width: 40%;
+		height: 80%;
+    margin: auto;
+    top: 10%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+		padding: 2rem; 
+		border-radius: 5px; }
+		
+.u-d-img-holder img{
+	margin-left: 7rem;
+	margin-top: 7rem;
+}
+}
+
+/* Helper classes and Animations */
+
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.slide-in-anim {
+	-webkit-animation-name: slideIn;
+	-webkit-animation-duration: 0.3s;
+	animation-name: slideIn;
+	animation-duration: 0.3s
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slideIn {
+	from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+	}
+}
+
+/* Our Lovely Spinner animation from tobiasahlin.com */
+.spinner {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin: 10rem auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #ff3602;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+

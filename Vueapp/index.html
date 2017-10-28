@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+    <!-- Responsive and mobile friendly stuff -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="res/css/styles.css" media="all">
+	<title>Github Vue App</title>
+	 </head>
+	 
+<body>
+
+	<!-- Initialize Our Vue app -->
+	<div id="app">	
+	  <router-view :items="items" :loading="loading"></router-view>	  
+	    </div>
+	
+		<!-- Users List template -->
+<template id="userlist-template">
+  <div class="activity-holder">
+       <div class="list-container">	
+	    <div class="header"><p>Users List</p></div>		  			
+		 <div class="loading" v-if="loading">
+			<div class="spinner">
+				  <div class="double-bounce1"></div><div class="double-bounce2"></div>
+			</div>
+			</div>
+	<div class="list-item" v-for="item in items">
+	<img :src="item.avatar_url" /> <h1>{{item.login}}
+	<router-link v-bind:to="{ name: 'item', params: { id: item.id }}"><button type="button" class="alignright">profile</button></router-link></h1>		  
+		 </div>
+		</div>
+	 </div>
+</template>
+
+<!-- User detail Template -->
+<template id="userdetail-template">	
+    <div class="activity-holder">
+   	  <div class="user-detail">
+		<div class="slide-in-anim">
+
+		 <h1 class="alignleft">
+		   <router-link to="/">
+			<svg width="15" height="15" viewBox="0 0 13 13" preserveAspectRatio="xMinYMin meet" version="1.1" 	xmlns="http://www.w3.org/2000/svg">
+            <line x1="1" y1="13" x2="13" y2="1" stroke="black" stroke-width="1.5"/>
+			<line x1="1" y1="1" x2="13" y2="13"  stroke="black" stroke-width="1.5"/>
+		    </svg>
+			</router-link> 
+		 </h1>
+
+		 <h1 class="alignright">{{item.login}}</h1>					
+
+		 <div class="u-d-img-holder"><img :src="item.avatar_url"/></div>
+		 
+		       <p>{{item.id}}</p>
+			   <p>{{item.html_url}}</p>
+			   <p>{{item.repos_url}}</p>
+			   
+		</div>
+	</div>
+</div>
+</template>
+
+<!--Import Vue  -->
+	<script src="res/vuefiles/vue.js"></script>
+<!--Import Vue Resource   -->
+	<script src="res/vuefiles/vue-resource.min.js"></script>
+<!--Import Vue Router from CDN  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.0.1/vue-router.js"></script>
+<!--Import our App  -->
+	<script src="res/githubvueapp.js"></script>
+
+</body>
+</html>
