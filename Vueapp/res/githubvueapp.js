@@ -51,7 +51,7 @@ var app = new Vue ({
 	},
 	created: function(){
 		this.loading = true;
-		this.$http.get("https://api.github.com/search/users?q=location:lagos+language:java&per_page=5")
+		this.$http.get("https://api.github.com/search/users?q=location:lagos+language:java&per_page=10")
 		.then(response => {
 			this.loading = false;
 			this.items = response.data.items; 
