@@ -6,7 +6,7 @@ www.moonerstack.info
 	Components 
 -----------------*/
 
-
+/* Userlist template to bind our data to a custom list template in html */
 var userlist = {
 	name: 'userlist',
 	template: '#userlist-template',
@@ -18,6 +18,7 @@ var userlist = {
 	}
 };
 
+/* User detail template to bind data to the usrdetails template in html */
 var userdetail = {
 	name: 'userdetail',
 	template: '#userdetail-template',
@@ -32,6 +33,7 @@ var userdetail = {
 	}
 };
 
+/* Vue router to map url request to thier respective templates */
 var router = new VueRouter ({
 	mode: 'hash',
 	base: window.location.href,
@@ -41,6 +43,7 @@ var router = new VueRouter ({
 	]
 	});
 
+/* Our app class then requests for data from our api url and parses it to the templates */
 var app = new Vue ({
 	router: router,
 	data () {
@@ -54,6 +57,7 @@ var app = new Vue ({
 		this.$http.get("https://api.github.com/search/users?q=location:lagos+language:java&per_page=10")
 		.then(response => {
 			this.loading = false;
+			response.data = JSON.parse(response.data);
 			this.items = response.data.items; 
 			console.log(this.items);
 	},
